@@ -35,6 +35,17 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test") 
 }
 
+task buildDocker(type: Docker, dependsOn: build) {
+  push = true
+  applicationName = jar.baseName
+  dockerfile = file('src/main/docker/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
+}
 
 eclipse {
     classpath {
