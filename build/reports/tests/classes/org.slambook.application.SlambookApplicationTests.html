@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.001s</div>
+<div class="counter">0s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads</td>
-<td>0.001s</td>
+<td>0s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,28 +87,28 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>23:09:24.269 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.slambook.application.SlambookApplicationTests].
-23:09:24.284 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
-23:09:24.296 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@60262061 declaringClass = 'org.slambook.application.SlambookApplicationTests', classes = '{class org.slambook.application.SlambookApplication}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
-23:09:24.301 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.slambook.application.SlambookApplicationTests]
-23:09:24.304 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [org.slambook.application.SlambookApplicationTests]: using defaults.
-23:09:24.310 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-23:09:24.314 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
-23:09:24.314 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
-23:09:24.318 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@319f0735, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2e2a3306, org.springframework.test.context.support.DirtiesContextTestExecutionListener@f363367]
-23:09:24.319 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
-23:09:24.320 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
-23:09:24.322 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
-23:09:24.322 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
-23:09:24.323 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
-23:09:24.323 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
-23:09:24.324 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
-23:09:24.325 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
-23:09:24.327 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@7e18e5e9 testClass = SlambookApplicationTests, testInstance = org.slambook.application.SlambookApplicationTests@786f2f4f, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@3f58ed37 testClass = SlambookApplicationTests, locations = '{}', classes = '{class org.slambook.application.SlambookApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
-23:09:24.372 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-23:09:24.373 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-23:09:24.373 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-23:09:24.374 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+<pre>23:30:28.166 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.slambook.application.SlambookApplicationTests].
+23:30:28.182 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+23:30:28.192 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@39f63874 declaringClass = 'org.slambook.application.SlambookApplicationTests', classes = '{class org.slambook.application.SlambookApplication}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+23:30:28.196 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.slambook.application.SlambookApplicationTests]
+23:30:28.199 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [org.slambook.application.SlambookApplicationTests]: using defaults.
+23:30:28.205 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:30:28.209 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+23:30:28.212 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+23:30:28.213 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@22bb359d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@16d8d0f5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@310d90d0]
+23:30:28.214 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
+23:30:28.215 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
+23:30:28.216 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
+23:30:28.217 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
+23:30:28.217 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
+23:30:28.217 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
+23:30:28.218 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.slambook.application.SlambookApplicationTests]
+23:30:28.218 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.slambook.application.SlambookApplicationTests]
+23:30:28.220 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@22162afe testClass = SlambookApplicationTests, testInstance = org.slambook.application.SlambookApplicationTests@16196b04, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6b0fe997 testClass = SlambookApplicationTests, locations = '{}', classes = '{class org.slambook.application.SlambookApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+23:30:28.272 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+23:30:28.273 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+23:30:28.273 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+23:30:28.274 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -118,16 +118,16 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.2.5.RELEASE)
 
-2015-07-02 23:09:24.517  INFO 5248 --- [    Test worker] o.s.a.SlambookApplicationTests           : Starting SlambookApplicationTests on X58052115022305 with PID 5248 (/Users/pradhakr/Documents/recall_workspace/slambook/build/classes/test started by pradhakr in /Users/pradhakr/Documents/recall_workspace/slambook)
-2015-07-02 23:09:24.542  INFO 5248 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@276f04fb: startup date [Thu Jul 02 23:09:24 EDT 2015]; root of context hierarchy
-2015-07-02 23:09:25.274  INFO 5248 --- [    Test worker] o.s.a.SlambookApplicationTests           : Started SlambookApplicationTests in 0.898 seconds (JVM running for 1.56)
+2015-07-02 23:30:28.400  INFO 5352 --- [    Test worker] o.s.a.SlambookApplicationTests           : Starting SlambookApplicationTests on X58052115022305 with PID 5352 (/Users/pradhakr/Documents/recall_workspace/slambook/build/classes/test started by pradhakr in /Users/pradhakr/Documents/recall_workspace/slambook)
+2015-07-02 23:30:28.428  INFO 5352 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@27fe8507: startup date [Thu Jul 02 23:30:28 EDT 2015]; root of context hierarchy
+2015-07-02 23:30:29.146  INFO 5352 --- [    Test worker] o.s.a.SlambookApplicationTests           : Started SlambookApplicationTests in 0.87 seconds (JVM running for 1.524)
 </pre>
 </span>
 </div>
 </div>
 <div id="footer">
 <p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.1</a> at Jul 2, 2015 11:09:25 PM</p>
+<a href="http://www.gradle.org">Gradle 2.2</a> at Jul 2, 2015 11:30:29 PM</p>
 </div>
 </div>
 </body>
