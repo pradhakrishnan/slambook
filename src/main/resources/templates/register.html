@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>SlamBook Registration</title>
+        <link rel="stylesheet" type="text/css" href="/css/admin.css"/>
+    </head>
+    <body id="cnee-admin">
+    	<div id="allwrap">
+    		<div id="cnee-login" class="section">
+    			<h2>Slambook Registration</h2>
+    			<form th:action="@{/registration}" method="post" id="admin_login_form">
+    				<table>
+    					<tr>
+                            <td colspan="2" id="error">
+                            	<div th:if="${param.error}">
+					            Registration failure.
+						        </div>
+                            </td>
+                        </tr>
+                        <tr>
+	                        <td>Firstname:</td>
+	                        <td><input type="text" name="firstname"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Lastname:</td>
+	                        <td><input type="text" name="lastname"/></td>
+	                    </tr>
+                        <tr>
+	                        <td>Username:</td>
+	                        <td><input type="text" name="username"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Password:</td>
+	                        <td><input type="password" name="password"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Confirm Password:</td>
+	                        <td><input type="password" name="confirmpassword"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Email:</td>
+	                        <td><input type="text" name="email"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td colspan='6'><input name="submit" value="register" type="submit" class="btn btn-success"/></td>
+	                    </tr>
+    				</table>
+    			</form>
+    		</div>
+        </div>
+    </body>
+</html>	
+
+
+
+
+ 

@@ -31,20 +31,13 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-   // compile("org.springframework.boot:spring-boot-starter-web:1.2.2.RELEASE")
-    testCompile("org.springframework.boot:spring-boot-starter-test") 
-}
-
-task buildDocker(type: Docker, dependsOn: build) {
-  push = true
-  applicationName = jar.baseName
-  dockerfile = file('src/main/docker/Dockerfile')
-  doFirst {
-    copy {
-      from jar
-      into stageDir
-    }
-  }
+    compile("org.springframework.boot:spring-boot-starter-jetty:1.2.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-actuator:1.2.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf:1.2.2.RELEASE")
+   	compile("org.springframework.social:spring-social-facebook:2.0.1.RELEASE")
+   	compile("org.springframework.boot:spring-boot-starter-security:1.2.2.RELEASE")
+   	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+   	testCompile("org.springframework.boot:spring-boot-starter-test") 
 }
 
 eclipse {
@@ -57,3 +50,5 @@ eclipse {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
+
+
