@@ -3,7 +3,9 @@ buildscript {
         springBootVersion = '1.2.5.RELEASE'
     }
     repositories {
+    	mavenLocal()
         mavenCentral()
+        
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
@@ -26,6 +28,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 
@@ -37,6 +40,7 @@ dependencies {
    	compile("org.springframework.social:spring-social-facebook:2.0.1.RELEASE")
    	compile("org.springframework.boot:spring-boot-starter-security:1.2.2.RELEASE")
    	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+   	compile("org.slambook.mongoservice:slambook-mongoservice:1.0-SNAPSHOT")
    	testCompile("org.springframework.boot:spring-boot-starter-test") 
 }
 

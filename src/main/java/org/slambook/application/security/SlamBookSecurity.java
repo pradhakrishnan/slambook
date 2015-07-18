@@ -18,9 +18,10 @@ public class SlamBookSecurity extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/admin/**").hasAnyRole("ADMIN","admin")
-		.and().authorizeRequests().antMatchers("/admin.html").hasAnyRole("ADMIN","admin")
-         .and().formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/admin").and().logout().permitAll();
+		http.authorizeRequests().antMatchers("/admin/**").hasAnyRole("ADMIN")
+		.and().authorizeRequests().antMatchers("/admin.html").hasAnyRole("ADMIN")
+		.and().authorizeRequests().antMatchers("/**").hasAnyRole("USER")
+         .and().formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/dashboard").and().logout().permitAll();
 	}
 
 	@Override

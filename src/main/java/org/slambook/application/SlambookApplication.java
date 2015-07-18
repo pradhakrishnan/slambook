@@ -1,41 +1,39 @@
 package org.slambook.application;
 
-import java.net.UnknownHostException;
-
+import org.slambook.mongoservices.SlamBookServices;
+import org.slambook.mongoservices.SlamBookUserServicesImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import com.mongodb.MongoClient;
-import com.mongodb.MongoException;
 
 @SpringBootApplication
 @ComponentScan
 @Configuration
-@ImportResource("spring/mongo.xml")
-@EnableMongoRepositories
 public class SlambookApplication {
+	
+	@Value("${dbname}")
+	private String dbName;
 
-	@Bean(name = "mongoClient")
-	public MongoClient getMongoClient() {
-		MongoClient mongoClient = null;
-		try {
-			mongoClient = new MongoClient("localhost", 27017);
-		} catch (UnknownHostException e) {
-			throw new MongoException("Unable to connect to Mongo");
-		}
-		return mongoClient;
-	}
+	@Value("${mongoHost}")
+	private String mongoHost;
+	
+	@Value("${mongoPort}")
+	private int mongoPort;
 
 	@Bean(name="encoder")
 	public PasswordEncoder getEncoder(){
 		return new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder();
 	}
+	
+	@Bean(name="slamBookUserService")
+	public SlamBookServices<org.slambook.mongoservices.domain.SlamBookUser> getSlamBookService(){
+		return new SlamBookUserServicesImpl(mongoHost, mongoPort, dbName);
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SlambookApplication.class, args);
 	}

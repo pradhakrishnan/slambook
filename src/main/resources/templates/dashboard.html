@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>SlamBook Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="/css/recall-client.css"/>
+    </head>
+    <body id="cnee-admin">
+    	<div id="allwrap">
+    		<div id="cnee-login" class="section">
+    			<h2>Slambook Dashboard</h2>
+    			<form th:action="@{/searchUser}" method="post" th:object="${searchModel}"  id="admin_login_form">
+    				<table>
+    				<tr th:each="message : ${slamBookUser}">
+					    <td th:text="${message.firstname}"></td>
+					    <td th:text="${message.lastname}"></td>
+					    <td th:text="${message.email}"></td>
+					    <td><a th:href="@{/viewprofile/(email=${message.email})}">Send Message</a></td>
+					</tr>
+    				</table>
+    			</form>
+    		</div>
+        </div>
+    </body>
+</html>	
+
+
+
+
+ 

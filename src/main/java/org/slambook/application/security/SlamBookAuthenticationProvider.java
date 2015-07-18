@@ -5,17 +5,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.slambook.application.domain.SlamBookUser;
 import org.slambook.application.service.UserService;
+import org.slambook.mongoservices.SlamBookServices;
+import org.slambook.mongoservices.domain.SlamBookUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -44,6 +46,9 @@ public class SlamBookAuthenticationProvider extends
 	@Autowired
 	private PasswordEncoder encoder;
 	
+	@Autowired
+	private SlamBookServices<SlamBookUser> slamBookService;
+	
 	@Override
 	protected void additionalAuthenticationChecks(UserDetails userDetails,
 			UsernamePasswordAuthenticationToken authentication)
@@ -59,7 +64,10 @@ public class SlamBookAuthenticationProvider extends
 		if (!StringUtils.hasText(password)) {
 			throw new BadCredentialsException("Please enter password");
 		}
-		SlamBookUser user = userService.getByUsername(username);
+		slamBookService.connectMongoServer();
+		org.slambook.mongoservices.domain.SlamBookUser user = slamBookService.findDocument(new Query(Criteria.where("username").is(username)), collection);
+		//slamBookService.closeMongoConnection();
+		//SlamBookUser user = userService.getByUsername(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("Invalid Login");
 		}

@@ -2,49 +2,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-        <title>SlamBook Registration</title>
+        <title>SlamBook Search</title>
         <link rel="stylesheet" type="text/css" href="/css/recall-client.css"/>
     </head>
     <body id="cnee-admin">
     	<div id="allwrap">
     		<div id="cnee-login" class="section">
-    			<h2>Slambook Registration</h2>
-    			<form th:action="@{/registration}" method="post" id="admin_login_form">
+    			<h2>Slambook Search</h2>
+    			<form th:action="@{/searchUser}" method="post" th:object="${searchModel}"  id="admin_login_form">
     				<table>
     					<tr>
                             <td colspan="2" id="error">
                             	<div th:if="${param.error}">
-					            Registration failure.
+					            Search failure.
 						        </div>
                             </td>
                         </tr>
                         <tr>
-	                        <td>Firstname:</td>
+	                        <td>search by first name :</td>
 	                        <td><input type="text" name="firstname"/></td>
 	                    </tr>
 	                    <tr>
-	                        <td>Lastname:</td>
+	                        <td>search by lastname:</td>
 	                        <td><input type="text" name="lastname"/></td>
 	                    </tr>
                         <tr>
-	                        <td>Username:</td>
-	                        <td><input type="text" name="username"/></td>
-	                    </tr>
-	                    <tr>
-	                        <td>Password:</td>
-	                        <td><input type="password" name="password"/></td>
-	                    </tr>
-	                    <tr>
-	                        <td>Confirm Password:</td>
-	                        <td><input type="password" name="confirmpassword"/></td>
-	                    </tr>
-	                    <tr>
-	                        <td>Email:</td>
+	                        <td>search by email:</td>
 	                        <td><input type="text" name="email"/></td>
 	                    </tr>
 	                    <tr>
-	                        <td colspan='6'><input name="submit" value="register" type="submit" class="btn btn-success"/></td>
+	                        <td colspan='3'><input name="submit" value="search" type="submit" class="btn btn-success"/></td>
 	                    </tr>
+    				</table>
+    				<table>
+    				<tr th:each="message : ${userList}">
+					    <td th:text="${message.firstname}"></td>
+					    <td th:text="${message.lastname}"></td>
+					    <td th:text="${message.email}"></td>
+					    <td><a th:href="@{/viewprofile/(email=${message.email})}">Send Message</a></td>
+					</tr>
     				</table>
     			</form>
     		</div>
