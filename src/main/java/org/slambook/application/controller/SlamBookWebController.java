@@ -1,5 +1,7 @@
 package org.slambook.application.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.security.Principal;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.mongodb.gridfs.GridFSDBFile;
 
 @RestController
 public class SlamBookWebController {
@@ -36,7 +40,6 @@ public class SlamBookWebController {
 	public ModelAndView register(HttpServletRequest request, HttpServletResponse response){
 		Map<String, String[]> map = request.getParameterMap();
 		SlamBookUser user = SlamBookHelper.convertMapToUser(map);
-		System.out.println("User "+ user);
 		userService.insert(user);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("search");
@@ -49,6 +52,15 @@ public class SlamBookWebController {
 		ModelAndView mv = new ModelAndView();
 		String username = principal.getName();
 		SlamBookUser user = userService.getByUsername(username);
+		GridFSDBFile profilePic = userService.retrieveProfilePic(username);
+		if(null != profilePic){
+			InputStream ioStrem = profilePic.getInputStream();
+			try {
+				ioStrem.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		mv.getModel().put("slamBookUser", user);
 		mv.addObject("slamBookUser", user);
 		mv.setViewName("dashboard");

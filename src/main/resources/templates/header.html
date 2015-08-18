@@ -2,21 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-         <meta charset="utf-8"/>
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	    <!-- Bootstrap -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-		<link rel="stylesheet" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="css/jquery.bxslider.css"/>
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/jquery.bxslider.css">
 		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
-		<link rel="stylesheet" href="css/animate.css"/>
+		<link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-		<link href="css/style.css" rel="stylesheet"/>	
+		<link href="css/style.css" rel="stylesheet">	
     </head>
     <body>
-     <header>
+    <header>
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container">
 				<ul class="social-network">
@@ -28,7 +28,7 @@
 				</ul>
 				<ul class="info">
 					<li><p><i class="fa fa-phone"></i>+1 769 525 422 5663</p></li>
-					<li><a href="#"><i class="fa fa-envelope"></i><span> <p th:text="${slamBookUser.email}" /> </span></a></li>
+					<li><a href="#"><i class="fa fa-envelope"></i>hello@Dewi.com</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -44,7 +44,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="index.html"><h1><span>Slam</span>Book</h1></a>
+							<a href="index.html"><h1><span>D</span>ewi</h1></a>
 						</div>
 					</div>
 					
@@ -63,38 +63,6 @@
 			</div>	
 		</nav>		
 	</header>
-    	<!-- <div class="body"></div>
-    	<div class="grad"></div>
-			<br/> -->
-			<div class="login">
-				<form th:action="@{/searchUser}" method="post" th:object="${searchModel}"  id="admin_login_form">
-    				<table>
-    				<tr th:each="message : ${slamBookUser}">
-					    <td th:text="${message.firstname}"></td>
-					    <td th:text="${message.lastname}"></td>
-					    <td th:text="${message.email}"></td>
-					    <td><a th:href="@{/viewprofile/(email=${message.email})}">Send Message</a></td>
-					</tr>
-    				</table>
-    			</form>
-    			<form action="">
-    				<table>
-    					<tr>
-    						<td>
-    							<textarea rows="3" cols="3"></textarea>
-    						</td>
-    					</tr>
-    					<tr>
-    						<td>
-    							<input type="submit" value="comment"/>
-    						</td>
-    						<td>
-    							<input type="hidden" name="commentFor" value="${slamBookUser.email}"/>
-    						</td>
-    					</tr>
-    				</table>
-    			</form>
-			</div>
     </body>
 </html>	
 

@@ -3,13 +3,17 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>SlamBook Registration</title>
-        <link rel="stylesheet" type="text/css" href="/css/recall-client.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     </head>
-    <body id="cnee-admin">
-    	<div id="allwrap">
-    		<div id="cnee-login" class="section">
-    			<h2>Slambook Registration</h2>
-    			<form th:action="@{/registration}" method="post" id="admin_login_form">
+    <body>
+    <div class="body"></div>
+    <div class="grad"></div>
+				<div class="header">
+					<div>Slam<span>Book Registration</span></div>
+				</div>
+				<br/><br/><br/><br/>
+				<div class="login">
+    			<form th:action="@{/registration}" method="post" id="admin_login_form" enctype="multipart/form-data">
     				<table>
     					<tr>
                             <td colspan="2" id="error">
@@ -43,12 +47,22 @@
 	                        <td><input type="text" name="email"/></td>
 	                    </tr>
 	                    <tr>
+	                        <td>Profile pics:</td>
+	                        <td><input type="file" name="profilepic"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Gender :</td>
+	                        <td>
+	                        	<input type="radio" name="male" value="Male"/>Male
+	                        	<input type="radio" name="male" value="Female"/>Female
+	                        </td>
+	                    </tr>
+	                    <tr>
 	                        <td colspan='6'><input name="submit" value="register" type="submit" class="btn btn-success"/></td>
 	                    </tr>
     				</table>
     			</form>
-    		</div>
-        </div>
+    			</div>
     </body>
 </html>	
 
